@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom styles for FlowContent */
+.flow-bg-green {
+  background-color: #2ECC71;
+}
+
+.flow-bg-green-dark {
+  background-color: #27AE60;
+}
+
+.flow-bg-green-darker {
+  background-color: #219653;
+}
+
+.flow-text-green {
+  color: #2ECC71;
+}
+
+.flow-text-green-dark {
+  color: #27AE60;
+}
