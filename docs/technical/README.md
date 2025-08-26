@@ -16,6 +16,23 @@ Esta pasta contém a documentação técnica completa e atualizada do projeto Fl
   - Manutenção
   - Troubleshooting
 
+- `COMPONENTS.md` - Documentação detalhada de cada componente:
+  - Header.jsx
+  - Footer.jsx
+  - Form.jsx
+  - ProcessSection.jsx
+  - About.jsx
+  - WhatsAppButton.jsx
+  - LandingPage.jsx
+  - ThankYouPage.jsx
+
+- `HOOKS.md` - Documentação dos hooks personalizados:
+  - useForm.js
+
+- `UTILS.md` - Documentação das funções utilitárias:
+  - validation.js
+  - formatter.js
+
 ## Propósito
 
 Esta documentação foi criada para facilitar:

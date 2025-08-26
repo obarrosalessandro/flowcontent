@@ -14,14 +14,20 @@ flowcontent-captura/
 │   ├── App.jsx             # Componente principal da aplicação
 │   └── index.css           # Estilos globais
 ├── public/                 # Arquivos públicos
-├── docs.md                 # Documentação completa do projeto
+├── docs/                   # Documentação completa do projeto
+│   ├── deployment/         # Instruções e configurações de deploy
+│   ├── development/        # Documentação de desenvolvimento
+│   ├── project-management/ # Análises e planejamento do projeto
+│   ├── technical/          # Documentação técnica completa
+│   ├── testing/            # Documentação relacionada a testes
+│   └── README.md           # Documentação da pasta docs
 ├── DEMO.md                 # Instruções para demonstração
 ├── REPOSITORY.md           # Instruções do repositório
 ├── README.md               # Descrição do projeto e setup
 ├── package.json            # Dependências e scripts
 ├── tailwind.config.js      # Configuração do Tailwind CSS
 ├── postcss.config.js       # Configuração do PostCSS
-├── jest.config.js          # Configuração do Jest
+├── jest.config.cjs         # Configuração do Jest
 └── vite.config.js          # Configuração do Vite
 ```
 
