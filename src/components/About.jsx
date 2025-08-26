@@ -63,7 +63,7 @@ const About = () => {
               
               <button 
                 onClick={scrollToTop}
-                className="mt-8 bg-flow-green-dark hover:bg-flow-green-darker text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
+                className="mt-8 bg-[#2ECC71] hover:bg-[#27AE60] text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 active:scale-95 shadow-md hover:shadow-lg"
               >
                 Quero Transformar Meu Instagram
               </button>
