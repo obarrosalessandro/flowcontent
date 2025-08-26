@@ -121,6 +121,7 @@ A página foi desenvolvida com foco em conversão, utilizando:
 ## 📖 Documentação
 
 - [Análise e Recomendações Técnicas](./docs/project-management/ANALISE_E_RECOMENDACOES.md)
+- [Documentação Técnica Completa](./docs/technical/TECHNICAL_DOCS.md)
 - [Documentação do Repositório](./REPOSITORY.md)
 
 ## 🤝 Contribuição
