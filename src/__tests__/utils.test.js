@@ -5,7 +5,7 @@ describe('Validation Utils', () => {
   describe('formatPhone', () => {
     test('deve formatar corretamente um número de telefone', () => {
       expect(formatPhone('22999999999')).toBe('(22) 99999-9999');
-      expect(formatPhone('2299999999')).toBe('(22) 99999-999'); // Corrigido
+      expect(formatPhone('2299999999')).toBe('(22) 9999-9999');
       expect(formatPhone('')).toBe('');
     });
   });
