@@ -4,6 +4,7 @@ const testData = {
   email: "teste@example.com",
   telefone: "+5522999999999",
   desafio: "Teste de envio de dados",
+  lgpd: true,
   utm_source: "",
   utm_medium: "",
   utm_campaign: "",

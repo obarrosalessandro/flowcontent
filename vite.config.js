@@ -6,11 +6,21 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: []
+      external: [],
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          forms: ['react-hook-form'],
+          utils: ['axios']
+        }
+      }
     },
     commonjsOptions: {
       include: [/node_modules/]
-    }
+    },
+    // Enable gzip compression
+    brotliSize: true,
+    chunkSizeWarningLimit: 1000
   },
   resolve: {
     conditions: ['import', 'browser']
@@ -21,5 +31,7 @@ export default defineConfig({
   },
   ssr: {
     noExternal: true,
-  }
+  },
+  // Optimize images
+  assetsInclude: ['**/*.webp', '**/*.jpg', '**/*.png']
 })
