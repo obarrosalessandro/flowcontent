@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { formatPhone, formatName } from '../utils/validation';
 import { formatPhoneNumberForSubmission, formatNameForSubmission, getUTMParameters } from '../utils/formatter';
 
@@ -8,8 +9,8 @@ const Form = () => {
     mode: 'onChange'
   });
   
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   
   const checkboxChecked = watch('privacy');
   
@@ -31,10 +32,14 @@ const Form = () => {
       email: data.email.toLowerCase(),
       telefone: formattedPhone,
       desafio: data.challenge,
+      lgpd: checkboxChecked ? true : false, // Adicionando o valor do checkbox LGPD
       ...utmData
     };
     
     try {
+      // Log dos dados que serão enviados
+      console.log('Dados a serem enviados:', payload);
+      
       // Send to webhook
       const response = await fetch('https://webhooks.alessandrobarros.com/wh/espera-flow-content', {
         method: 'POST',
@@ -44,35 +49,29 @@ const Form = () => {
         body: JSON.stringify(payload),
       });
       
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      
       if (response.ok) {
-        setIsSubmitted(true);
+        console.log('Formulário enviado com sucesso!');
+        // Redirect to thank you page with user's name
+        navigate('/obrigado', { state: { name: formattedName } });
       } else {
-        throw new Error('Failed to submit');
+        const errorText = await response.text();
+        console.error('Server error response:', errorText);
+        console.error('Response status:', response.status);
+        throw new Error(`Falha no envio: ${response.status} ${response.statusText}`);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Ocorreu um erro ao enviar o formulário. Por favor, tente novamente.');
+      alert(`Ocorreu um erro ao enviar o formulário: ${error.message}. Por favor, tente novamente.`);
     } finally {
       setIsSubmitting(false);
     }
   };
   
-  if (isSubmitted) {
-    return (
-      <div className="bg-white rounded-lg p-8 text-center">
-        <h3 className="text-2xl font-bold text-[#2ECC71] mb-4">Obrigado por entrar na lista VIP!</h3>
-        <p className="text-gray-700 mb-6">
-          Em breve você receberá um e-mail com todas as informações sobre o FlowContent.
-        </p>
-        <p className="text-gray-600">
-          Enquanto isso, fique à vontade para tirar dúvidas pelo WhatsApp clicando no botão abaixo.
-        </p>
-      </div>
-    );
-  }
-  
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-lg p-8 shadow-lg">
+    <form id="waitlist-form" onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-lg p-8 shadow-lg">
       <div className="mb-6">
         <input
           type="text"
@@ -171,10 +170,10 @@ const Form = () => {
       <button
         type="submit"
         disabled={!isValid || !checkboxChecked || isSubmitting}
-        className={`w-full py-4 px-6 rounded-lg font-semibold text-lg text-white transition-colors ${
+        className={`w-full py-4 px-6 rounded-lg font-semibold text-lg text-white transition-colors duration-300 ${
           isValid && checkboxChecked && !isSubmitting
-            ? 'bg-[#27AE60] hover:bg-[#219653] cursor-pointer'
-            : 'bg-gray-400 cursor-not-allowed'
+            ? 'bg-[#2ECC71] hover:bg-[#27AE60] active:bg-[#219653] cursor-pointer'
+            : 'bg-[#58D68D] hover:bg-[#2ECC71] cursor-not-allowed'
         }`}
       >
         {isSubmitting ? 'Enviando...' : 'Entrar na Lista de Espera VIP'}

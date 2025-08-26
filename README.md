@@ -2,18 +2,19 @@
 
 Página de captura de leads de alta performance para o FlowContent, um combo de agentes de IA focado em criar conteúdo estratégico para Instagram.
 
-## Descrição
+## 📋 Descrição
 
 Esta landing page foi desenvolvida especificamente para nutricionistas com menos de 50.000 seguidores no Instagram, que reconhecem a importância do marketing digital, mas não têm tempo, conhecimento técnico ou criatividade para produzir conteúdo de forma consistente.
 
-## Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
 - **React** com **Vite** para desenvolvimento rápido
 - **Tailwind CSS** para estilização utility-first
 - **React Hook Form** para validação de formulários
+- **React Router DOM** para navegação
 - **Axios** para requisições HTTP
 
-## Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
 src/
@@ -25,17 +26,17 @@ src/
 │   ├── About.jsx
 │   └── WhatsAppButton.jsx
 ├── pages/              # Páginas da aplicação
-│   └── LandingPage.jsx
+│   ├── LandingPage.jsx
+│   └── ThankYouPage.jsx
 ├── utils/              # Funções utilitárias
 │   ├── validation.js
 │   └── formatter.js
 ├── hooks/              # Hooks personalizados
-│   └── useForm.js
 └── styles/             # Estilos globais
     └── index.css
 ```
 
-## Setup do Projeto
+## 🛠️ Setup do Projeto
 
 1. **Instalar dependências:**
    ```bash
@@ -57,7 +58,7 @@ src/
    npm run preview
    ```
 
-## Funcionalidades
+## ✨ Funcionalidades
 
 - **Formulário de captura de leads** com validação em tempo real
 - **Máscara de telefone** automática no campo de WhatsApp
@@ -66,15 +67,23 @@ src/
 - **Botão flutuante de WhatsApp** para contato direto
 - **Design responsivo** que funciona em mobile e desktop
 - **Otimização de performance** para carregamento rápido
+- **Animação de digitação** na headline principal
+- **Scroll suave** entre seções
+- **Página de agradecimento** personalizada
 
-## Testes
+## 🧪 Testes
 
 Para rodar os testes:
 ```bash
 npm test
 ```
 
-## Deploy
+Para rodar os testes em modo watch:
+```bash
+npm run test:watch
+```
+
+## ☁️ Deploy
 
 Para fazer deploy na Vercel:
 
@@ -83,7 +92,7 @@ Para fazer deploy na Vercel:
 3. Configure o domínio personalizado: `espera.alessandrobastos.com.br`
 4. Adicione as variáveis de ambiente necessárias
 
-## Desenvolvimento
+## 👨‍💻 Desenvolvimento
 
 Para iniciar o ambiente de desenvolvimento:
 
@@ -92,7 +101,7 @@ Para iniciar o ambiente de desenvolvimento:
 3. Inicie o servidor de desenvolvimento com `npm run dev`
 4. Acesse `http://localhost:5173` no seu navegador
 
-## Estratégia de Conversão
+## 📈 Estratégia de Conversão
 
 A página foi desenvolvida com foco em conversão, utilizando:
 
@@ -103,12 +112,27 @@ A página foi desenvolvida com foco em conversão, utilizando:
 - **Conexão humana** com o criador do produto
 - **Chamadas claras para ação** em pontos estratégicos
 
-## Performance
+## ⚡ Performance
 
 - Carregamento otimizado para menos de 2 segundos
 - Código otimizado para SEO e acessibilidade
 - Práticas de performance web implementadas
 
-## Expanding the ESLint configuration
+## 📖 Documentação
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Análise e Recomendações Técnicas](./docs/ANALISE_E_RECOMENDACOES.md)
+- [Documentação do Repositório](./REPOSITORY.md)
+
+## 🤝 Contribuição
+
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📞 Contato
+
+Alessandro Barros - [@alessandrobarros](https://twitter.com/alessandrobarros)
+
+Link do Projeto: [https://flowcontent.app](https://flowcontent.app)
