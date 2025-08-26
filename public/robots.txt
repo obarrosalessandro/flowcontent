@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://espera.flowcontent.app/sitemap.xml
