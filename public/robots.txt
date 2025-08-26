@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-
 # Cache instructions for images
-Cache-Control: max-age=31536000
-
-Sitemap: https://espera.alessandrobarros.com/sitemap.xml
+Sitemap: https://espera.alessandrobastos.com.br/sitemap.xml

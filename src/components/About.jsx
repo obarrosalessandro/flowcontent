@@ -49,15 +49,7 @@ const About = () => {
               
               <div className="space-y-4">
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  ...e eu sei exatamente como é a rotina de uma nutricionista empreendedora. São consultas, atendimentos e a pressão constante de manter um conteúdo relevante no Instagram.
-                </p>
-                
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Percebi que a maioria das nutricionistas tem conhecimento técnico excepcional, mas enfrenta um gigantesco desafio criativo: transformar esse conhecimento em conteúdo que engaje e converta.
-                </p>
-                
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Foi pensando nisso que desenvolvi o FlowContent: uma solução que combina inteligência artificial especializada em nutrição com estratégia de conteúdo comprovada.
+                  Como nutricionista empreendedor, entendo os desafios de criar conteúdo relevante para o Instagram. Por isso, desenvolvi o FlowContent: uma solução de inteligência artificial especializada em nutrição para transformar seu conhecimento em conteúdo que engaja e converte.
                 </p>
               </div>
               

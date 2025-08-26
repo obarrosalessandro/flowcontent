@@ -25,7 +25,7 @@ src/
 ### Header.jsx
 
 #### Descrição
-Componente de cabeçalho que exibe o logo da marca FlowContent.
+Componente de cabeçalho atualmente não utilizado e oculto (`display: none`). Pode ser ativado para exibir um logo ou navegação.
 
 #### Props
 Nenhuma prop específica.
@@ -37,8 +37,7 @@ Nenhum estado local.
 Nenhuma função específica.
 
 #### Estilização
-- Utiliza classes do Tailwind CSS
-- Cores da marca: #2ECC71 (verde principal)
+- Atualmente oculto. Se ativado, utilizaria classes do Tailwind CSS.
 
 #### Importações
 ```javascript
@@ -47,13 +46,12 @@ import React from 'react';
 
 #### Código Base
 ```jsx
+import React from 'react';
+
 const Header = () => {
   return (
-    <header className="bg-white py-6">
-      <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold text-green-500">FlowContent</h1>
-      </div>
-    </header>
+    <div style={{ display: 'none' }}>
+    </div>
   );
 };
 
@@ -63,7 +61,7 @@ export default Header;
 ### Footer.jsx
 
 #### Descrição
-Componente de rodapé que exibe informações de copyright e links importantes.
+Componente de rodapé que exibe informações de copyright, links importantes e o logo textual "FlowContent".
 
 #### Props
 Nenhuma prop específica.
@@ -75,9 +73,9 @@ Nenhum estado local.
 Nenhuma função específica.
 
 #### Estilização
-- Utiliza classes do Tailwind CSS
-- Cores da marca: #27AE60 (verde secundário)
-- Texto em cinza claro
+- Utiliza classes do Tailwind CSS.
+- Cores da marca para o logo textual "FlowContent".
+- Links e texto em tons de cinza.
 
 #### Importações
 ```javascript
@@ -86,11 +84,30 @@ import React from 'react';
 
 #### Código Base
 ```jsx
+import React from 'react';
+
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-gray-100 py-6">
       <div className="container mx-auto px-4 text-center">
-        <p>&copy; {new Date().getFullYear()} FlowContent. Todos os direitos reservados.</p>
+        <div className="mb-4">
+          <h3 className="text-xl font-bold text-flow-green">FlowContent</h3>
+        </div>
+        <p className="text-gray-600 text-sm mb-2">
+          FlowContent © 2025. Todos os direitos reservados.
+        </p>
+        <div className="flex justify-center items-center space-x-4">
+          <a href="#" className="text-[#2ECC71] hover:underline text-sm">Sobre</a>
+          <span className="text-[#2ECC71]">|</span>
+          <a 
+            href="https://alessandrobarros.com/politica-de-privacidade" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-[#2ECC71] hover:underline text-sm"
+          >
+            Política de Privacidade
+          </a>
+        </div>
       </div>
     </footer>
   );
@@ -102,7 +119,7 @@ export default Footer;
 ### Form.jsx
 
 #### Descrição
-Componente principal de captura de leads com validação em tempo real e envio para webhook.
+Componente principal de captura de leads com validação em tempo real, envio para webhook e placeholder customizado para o campo de nome.
 
 #### Props
 Nenhuma prop específica.
@@ -120,9 +137,10 @@ Nenhuma prop específica.
 - `formatPhoneInput`: Função para formatar o input de telefone em tempo real
 
 #### Estilização
-- Utiliza classes do Tailwind CSS
-- Estilos específicos para estados de validação
-- Animações de transição
+- Utiliza classes do Tailwind CSS.
+- Estilos específicos para estados de validação.
+- Animações de transição.
+- Cores do botão de envio: `bg-[#58D68D]` (verde mais claro) para o estado habilitado e `bg-[#2ECC71]` (verde principal) para o estado desabilitado.
 
 #### Importações
 ```javascript

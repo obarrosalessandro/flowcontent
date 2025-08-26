@@ -60,16 +60,16 @@ src/
 
 ## ✨ Funcionalidades
 
-- **Formulário de captura de leads** com validação em tempo real
+- **Formulário de captura de leads** com validação em tempo real e placeholder customizado
 - **Máscara de telefone** automática no campo de WhatsApp
 - **Formatação de nome** para primeiro e último nome
 - **Envio para webhook** com dados formatados e parâmetros UTM
 - **Botão flutuante de WhatsApp** para contato direto
 - **Design responsivo** que funciona em mobile e desktop
 - **Otimização de performance** para carregamento rápido
-- **Animação de digitação** na headline principal
+
 - **Scroll suave** entre seções
-- **Página de agradecimento** personalizada
+- **Página de agradecimento estratégica** com foco em engajamento e próximos passos
 
 ## 🧪 Testes
 
@@ -85,12 +85,17 @@ npm run test:watch
 
 ## ☁️ Deploy
 
-Para fazer deploy na Vercel:
+Este projeto está configurado para deploy automático na Cloudflare Pages.
 
-1. Crie um novo projeto na Vercel
-2. Conecte com o repositório GitHub
-3. Configure o domínio personalizado: `espera.alessandrobastos.com.br`
-4. Adicione as variáveis de ambiente necessárias
+1.  **Conecte o repositório:** No painel da Cloudflare Pages, crie um novo projeto e conecte-o a este repositório GitHub.
+2.  **Configuração de Build:**
+    *   **Framework Preset:** `Vite`
+    *   **Build command:** `npm run build`
+    *   **Publish directory:** `dist`
+3.  **Domínio Personalizado:** Configure seu domínio personalizado (ex: `espera.alessandrobastos.com.br`) no painel da Cloudflare Pages.
+4.  **Variáveis de Ambiente:** Adicione quaisquer variáveis de ambiente necessárias no painel da Cloudflare Pages.
+
+Cada push para a branch `main` (ou a branch configurada) irá disparar um novo deploy automaticamente.
 
 ## 👨‍💻 Desenvolvimento
 
@@ -103,14 +108,18 @@ Para iniciar o ambiente de desenvolvimento:
 
 ## 📈 Estratégia de Conversão
 
-A página foi desenvolvida com foco em conversão, utilizando:
+A estratégia de conversão desta landing page é multifacetada, focando em guiar o lead através de uma jornada otimizada:
 
-- **Headline impactante** que conecta diretamente com a dor do público
-- **Sub-headline de conexão** que mostra empatia e apresenta a solução
-- **Formulário otimizado** com campos relevantes e validação clara
-- **Seção de processo** que explica como funciona de forma simples
-- **Conexão humana** com o criador do produto
-- **Chamadas claras para ação** em pontos estratégicos
+-   **Página de Captura:**
+    *   **Headline e Sub-headline:** Desenvolvidas para conectar com a dor do público-alvo (nutricionistas ocupadas) e apresentar a solução de forma clara e empática.
+    *   **Formulário Otimizado:** Campos relevantes com validação em tempo real e placeholder customizado para facilitar o preenchimento.
+    *   **Seções de Engajamento:** Explicação do processo e conexão humana para construir confiança.
+    *   **Chamadas para Ação:** Botões claros e visíveis para guiar o usuário.
+
+-   **Página de Obrigado (Estratégia Natanael Oliveira):**
+    *   **Confirmação Imediata:** Mensagem clara de sucesso da inscrição e instruções para verificar e-mail/WhatsApp.
+    *   **Oferta Única (Tripwire - Oculta):** Estrutura preparada para uma oferta de baixo custo e alto valor, visando a conversão imediata do lead em cliente. Atualmente oculta, mas pronta para ser ativada.
+    *   **Engajamento Pós-Inscrição:** Direcionamento estratégico para a comunidade no Telegram e canal no YouTube, garantindo que o lead continue engajado mesmo sem a oferta imediata.
 
 ## ⚡ Performance
 

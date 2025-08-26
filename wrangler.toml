@@ -7,3 +7,27 @@ watch_dir = "./src"
 
 [env.production]
 NODE_ENV = "production"
+
+[pages]
+main = "./dist"
+branch = "main"
+route = "flowcontent.com.br"
+
+[pages.analytics]
+enabled = true
+
+[pages.headers]
+"/*" = {
+  "X-Frame-Options" = "DENY",
+  "X-Content-Type-Options" = "nosniff",
+  "Referrer-Policy" = "strict-origin-when-cross-origin",
+  "Permissions-Policy" = "camera=(), microphone=(), geolocation=()",
+  "Strict-Transport-Security" = "max-age=31536000; includeSubDomains; preload"
+}
+
+[pages.cache]
+edge_ttl = "1d"
+browser_ttl = "1h"
+serve_stale = true
+
+pages_build_output_dir = "./dist"

@@ -65,22 +65,11 @@ O tom da comunicação deve ser:
 
 ```
 src/
-├── components/          # Componentes reutilizáveis
-│   ├── Header.jsx
-│   ├── Footer.jsx
-│   ├── Form.jsx
-│   ├── ProcessSection.jsx
-│   ├── About.jsx
-│   └── WhatsAppButton.jsx
-├── pages/              # Páginas da aplicação
-│   └── LandingPage.jsx
-├── utils/              # Funções utilitárias
-│   ├── validation.js
-│   └── formatter.js
-├── hooks/              # Hooks personalizados
-│   └── useForm.js
-└── styles/             # Estilos globais
-    └── index.css
+├── components/          # Componentes reutilizáveis (Header, Footer, Form, ProcessSection, About, WhatsAppButton)
+├── pages/              # Páginas da aplicação (LandingPage, ThankYouPage)
+├── utils/              # Funções utilitárias (validation.js, formatter.js)
+├── hooks/              # Hooks personalizados (useForm.js)
+└── index.css           # Estilos globais
 ```
 
 #### Critérios de Sucesso
@@ -95,12 +84,14 @@ src/
 ### Estrutura Aprimorada
 
 #### Header
-- Logo textual "FlowContent" com tipografia moderna
-- Design clean e profissional
+- Logo textual "FlowContent" em verde vibrante, sem box, com efeito sutil de sombra e hover.
+- Design clean e profissional.
 
 #### Seção Principal (Dobra 1)
-**Headline Otimizada**: "Crie Reels Que Vendem e Stories Que Engajam em 5 Minutos"
-**Sub-headline Otimizada**: "FlowContent é o combo de agentes de IA que cria conteúdo estratégico pra nutricionistas ocupadas. Entre na lista VIP e seja um dos primeiros a transformar seu Instagram!"
+-   **Headline Principal:** "Crie Reels Que Vendem e Stories Que Engajam em 5 Minutos" (Cor cinza escuro, negrito, tamanho adaptável, com quebra de linha após "Stories" para melhor leitura).
+-   **Sub-headline:**
+    *   "Sem tempo para criar conteúdo? FlowContent é o combo de agentes de IA que cria conteúdo estratégico para nutricionistas ocupadas." (Texto claro e direto, com "FlowContent" em verde e negrito para destaque).
+    *   "Entre na lista VIP e seja um dos primeiros a transformar seu Instagram!" (Chamada para ação clara e destacada).
 
 #### Seção de Processo
 **Título**: "Como o FlowContent Transforma Seu Instagram em uma Máquina de Leads"
@@ -114,14 +105,22 @@ src/
 
 ### Mudanças na Copy - Justificativa
 
-1. **Headline**: "Crie Reels Que Vendem e Stories Que Engajam em 5 Minutos"
-   - Justificativa: Mais específico sobre os benefícios (vendas e engajamento) e inclui um número concreto (5 minutos) que gera credibilidade
+As alterações na copy da Landing Page foram feitas para otimizar a clareza, o impacto e a conexão com o público-alvo, refletindo as decisões de design e UX:
 
-2. **Sub-headline**: "FlowContent é o combo de agentes de IA que cria conteúdo estratégico pra nutricionistas ocupadas. Entre na lista VIP e seja um dos primeiros a transformar seu Instagram!"
-   - Justificativa: Personalização direta ("pra nutricionistas ocupadas") e criação de urgência/escassez ("seja um dos primeiros")
+1.  **Logo Textual "FlowContent" (Topo):**
+    *   **Justificativa:** Posicionamento estratégico para reforçar a marca desde o início. A cor verde vibrante e o efeito sutil de sombra/hover (quando ativo) garantem visibilidade e um toque moderno, sem a distração de um "box".
 
-3. **Título da Seção de Processo**: "Como o FlowContent Transforma Seu Instagram em uma Máquina de Leads"
-   - Justificativa: Mais específico sobre o resultado final (máquina de leads) e uso da palavra "seu" para conexão pessoal
+2.  **Headline Principal:** "Crie Reels Que Vendem e Stories Que Engajam em 5 Minutos"
+    *   **Justificativa:** Mantém o foco nos benefícios claros (vendas e engajamento) e na promessa de agilidade ("em 5 minutos"). A cor cinza escuro e o negrito garantem legibilidade e seriedade, enquanto a quebra de linha otimiza a leitura em diferentes dispositivos.
+
+3.  **Sub-headline (Dividida em dois parágrafos):**
+    *   **Primeiro Parágrafo:** "Sem tempo para criar conteúdo? FlowContent é o combo de agentes de IA que cria conteúdo estratégico para nutricionistas ocupadas."
+        *   **Justificativa:** Conecta diretamente com a dor da audiência ("Sem tempo para criar conteúdo?") e apresenta a solução de forma concisa. O destaque em verde e negrito para "FlowContent" reforça a marca dentro do contexto da solução.
+    *   **Segundo Parágrafo:** "Entre na lista VIP e seja um dos primeiros a transformar seu Instagram!"
+        *   **Justificativa:** É uma chamada para ação clara e direta, criando um senso de exclusividade e urgência para a inscrição na lista VIP.
+
+4.  **Botões (Formulário e Seção "Sobre"):**
+    *   **Justificativa:** A padronização para tons de verde mais escuros (como `flow-green-dark`) visa aumentar o contraste e a visibilidade dos botões, tornando-os mais "chamativos" e convidativos à interação.
 
 ## Fase 2: Desenvolvimento e Implementação Técnica
 
@@ -186,42 +185,32 @@ Detalhada na seção de Estrutura de Pastas
 
 ## Fase 4: Entrega e Instruções de Deploy
 
-### Deploy na Vercel
+### Deploy na Cloudflare Pages
 
 #### Pré-requisitos
-1. Conta na Vercel (https://vercel.com)
+1. Conta na Cloudflare (https://dash.cloudflare.com)
 2. Repositório do projeto no GitHub
-3. Acesso ao domínio `espera.alessandrobastos.com.br`
 
 #### Passo a passo para deploy
 
-1. **Importar projeto na Vercel**:
-   - Acesse o painel da Vercel
-   - Clique em "New Project"
-   - Selecione o repositório `flowcontent-captura` do GitHub
-   - Clique em "Import"
+1. **Conectar o repositório:**
+   - Acesse o painel da Cloudflare Pages
+   - Clique em "Create a project" (Criar um projeto)
+   - Conecte-se ao seu repositório GitHub e selecione `flowcontent-captura`
 
-2. **Configurações do projeto**:
-   - Framework Preset: `Vite`
-   - Root Directory: Deixe em branco (raiz do projeto)
-   - Build and Output Settings:
-     - Build Command: `npm run build`
-     - Output Directory: `dist`
-     - Install Command: `npm install`
+2. **Configurações de Build:**
+   - **Framework preset:** `Vite`
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+   - **Production branch:** `main` (ou a branch que você usa para produção)
 
 3. **Variáveis de ambiente** (se necessário):
-   - Nenhuma variável de ambiente é necessária para esta aplicação
+   - Adicione quaisquer variáveis de ambiente necessárias para o build ou runtime da sua aplicação.
 
 4. **Configuração de domínio personalizado**:
-   - Após o deploy inicial, vá para as configurações do projeto
-   - Acesse "Domains"
-   - Adicione o domínio `espera.alessandrobastos.com.br`
-   - Siga as instruções da Vercel para configurar os registros DNS no seu provedor
-
-5. **Configurações de produção**:
-   - Certifique-se de que as configurações de produção estão corretas
-   - Verifique se o webhook está acessível
-   - Teste o formulário em produção
+   - Após o deploy inicial, vá para as configurações do projeto na Cloudflare Pages
+   - Acesse "Custom domains" (Domínios personalizados)
+   - Adicione seu domínio (ex: `espera.alessandrobastos.com.br`) e siga as instruções para configurar os registros DNS.
 
 #### Comandos úteis
 
@@ -244,7 +233,7 @@ npm run test:watch
 
 #### Verificação pós-deploy
 
-1. Acesse `https://espera.alessandrobastos.com.br`
+1. Acesse seu domínio personalizado (ex: `https://espera.alessandrobastos.com.br`)
 2. Verifique se todos os elementos da página estão carregando corretamente
 3. Teste o formulário de captura de leads
 4. Verifique se o botão de WhatsApp está funcionando
@@ -253,19 +242,15 @@ npm run test:watch
 
 #### Manutenção e atualizações
 
-1. **Atualizações de conteúdo**:
-   - Modifique os arquivos JSX nos componentes conforme necessário
-   - Faça push para o repositório no GitHub
-   - O Vercel fará deploy automático após o push
+1. **Atualizações de conteúdo e estilo**:
+   - Modifique os arquivos JSX, CSS ou classes do Tailwind conforme necessário
+   - Faça push para a branch de produção no GitHub
+   - A Cloudflare Pages fará deploy automático após o push
 
-2. **Atualizações de estilo**:
-   - Modifique os arquivos CSS ou as classes do Tailwind
-   - As mudanças terão efeito imediato após o deploy
-
-3. **Monitoramento**:
-   - Utilize o painel da Vercel para monitorar performance e erros
+2. **Monitoramento**:
+   - Utilize o painel da Cloudflare Pages para monitorar performance e logs de deploy
    - Configure alertas conforme necessário
 
-4. **Backup**:
+3. **Backup**:
    - Mantenha o repositório no GitHub atualizado
-   - O Vercel mantém histórico de deploys
+```
