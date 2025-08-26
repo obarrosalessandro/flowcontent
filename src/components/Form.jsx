@@ -79,7 +79,7 @@ const Form = () => {
         <input
           id="name"
           type="text"
-          placeholder="Nome completo como deseja ser chamado"
+          placeholder="Como deseja ser chamado?"
           className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 ${
             errors.name 
               ? 'border-red-500 focus:ring-red-200 focus:border-red-500' 

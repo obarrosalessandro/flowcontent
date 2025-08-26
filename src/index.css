@@ -2,32 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
-/* Reset global extremo para eliminar qualquer estilo indesejado */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  box-shadow: none;
-}
 
-html {
-  background: transparent;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  border: 0;
-  outline: 0;
-  box-shadow: none;
-}
 
 /* Custom styles for FlowContent */
 .flow-bg-green {
@@ -75,21 +50,6 @@ body {
 }
 
 /* Animações personalizadas */
-@keyframes pulse-glow {
-  0% {
-    box-shadow: 0 0 5px rgba(46, 204, 113, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 5px rgba(46, 204, 113, 0.2);
-  }
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s infinite;
-}
 
 /* Fade in animation */
 @keyframes fade-in {
