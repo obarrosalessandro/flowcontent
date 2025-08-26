@@ -12,5 +12,8 @@
   "routes": [
     { "handle": "filesystem" },
     { "src": "/.*", "dest": "/index.html" }
-  ]
+  ],
+  "buildCommand": "npm install --platform=linux --arch=x64 && npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install --platform=linux --arch=x64"
 }
