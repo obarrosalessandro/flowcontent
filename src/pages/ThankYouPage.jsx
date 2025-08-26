@@ -11,7 +11,6 @@ const ThankYouPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center bg-white rounded-lg p-8 shadow-lg transition-all duration-500 animate-fade-in">
             <div className="mb-6">
-              <h1 className="text-2xl font-bold text-[#2ECC71]">FlowContent</h1>
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
