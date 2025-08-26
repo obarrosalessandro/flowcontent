@@ -1,0 +1,10 @@
+name = "flowcontent-captura"
+main = "./dist"
+compatibility_date = "2025-08-26"
+
+[build]
+command = "npm install && npm run build"
+watch_dir = "./src"
+
+[env.production]
+vars = { NODE_ENV = "production" }
