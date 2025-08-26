@@ -2,8 +2,19 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="pt-4 pb-0 flex justify-center">
-      <h1 className="text-4xl font-bold text-[#2ECC71] m-0 p-0">FlowContent</h1>
+    <header style={{ margin: 0, padding: 0, border: 'none', backgroundColor: 'transparent' }}>
+      <h1 style={{ 
+        margin: 0, 
+        padding: 0, 
+        border: 'none', 
+        backgroundColor: 'transparent',
+        color: '#2ECC71',
+        fontSize: '2.25rem',
+        fontWeight: '700',
+        fontFamily: 'Montserrat, sans-serif'
+      }}>
+        FlowContent
+      </h1>
     </header>
   );
 };
