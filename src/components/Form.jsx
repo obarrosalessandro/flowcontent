@@ -200,7 +200,7 @@ const Form = () => {
         className={`w-full py-4 px-6 rounded-lg font-semibold text-lg text-white transition-all duration-300 transform ${
           isValid && checkboxChecked && !isSubmitting
             ? 'bg-[#2ECC71] hover:bg-[#27AE60] hover:scale-[1.02] active:scale-[0.98] active:bg-[#219653] shadow-md hover:shadow-lg cursor-pointer'
-            : 'bg-[#58D68D] hover:bg-[#2ECC71] cursor-not-allowed opacity-75'
+            : 'bg-flow-green-dark hover:bg-flow-green-darker cursor-not-allowed opacity-75'
         } ${isSubmitting ? 'animate-pulse' : ''}`}
       >
         {isSubmitting ? 'Enviando...' : 'Entrar na Lista de Espera VIP'}
