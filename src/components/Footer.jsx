@@ -11,7 +11,7 @@ const Footer = () => {
           FlowContent © 2025. Todos os direitos reservados.
         </p>
         <div className="flex justify-center items-center space-x-4">
-          <a href="http://alessandrobarros.com/sobre" className="text-[#2ECC71] hover:underline text-sm">Sobre</a>
+          <a href="http://alessandrobarros.com/sobre" target="_blank" rel="noopener noreferrer" className="text-[#2ECC71] hover:underline text-sm">Sobre</a>
           <span className="text-[#2ECC71]">|</span>
           <a 
             href="https://alessandrobarros.com/politica-de-privacidade" 
