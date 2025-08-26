@@ -1,0 +1,19 @@
+{
+  "name": "flowcontent-captura",
+  "main": "./dist",
+  "site": {
+    "bucket": "./dist",
+    "entry-point": "."
+  },
+  "build": {
+    "command": "npm run build",
+    "watch_dir": "./src"
+  },
+  "env": {
+    "production": {
+      "vars": {
+        "NODE_ENV": "production"
+      }
+    }
+  }
+}
