@@ -120,7 +120,7 @@ A página foi desenvolvida com foco em conversão, utilizando:
 
 ## 📖 Documentação
 
-- [Análise e Recomendações Técnicas](./docs/ANALISE_E_RECOMENDACOES.md)
+- [Análise e Recomendações Técnicas](./docs/project-management/ANALISE_E_RECOMENDACOES.md)
 - [Documentação do Repositório](./REPOSITORY.md)
 
 ## 🤝 Contribuição
@@ -135,4 +135,4 @@ A página foi desenvolvida com foco em conversão, utilizando:
 
 Alessandro Barros - [@alessandrobarros](https://twitter.com/alessandrobarros)
 
-Link do Projeto: [https://flowcontent.app](https://flowcontent.app)
+Link do Projeto: [https://espera.alessandrobarros.com](https://espera.alessandrobarros.com)

@@ -99,4 +99,4 @@ src/
 
 Esta demonstração mostra uma página de captura de leads de alta performance, otimizada para conversão e desenvolvida com as melhores práticas de desenvolvimento front-end.
 
-A página está pronta para ser implantada na Vercel com o domínio `espera.alessandrobastos.com.br` seguindo as instruções detalhadas no arquivo `docs.md`.
+A página está pronta para ser implantada na Vercel com o domínio `espera.alessandrobastos.com.br` seguindo as instruções detalhadas no arquivo `docs/development/docs.md`.

@@ -111,7 +111,7 @@ Os testes estão localizados na pasta `src/__tests__/` e utilizam:
 
 ## Deploy
 
-Para informações detalhadas sobre deploy, consulte o arquivo `docs.md`.
+Para informações detalhadas sobre deploy, consulte o arquivo `docs/development/docs.md`.
 
 ## Contribuindo
 
