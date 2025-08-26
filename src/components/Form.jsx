@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, memo } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { formatPhone, formatName } from '../utils/validation';
@@ -14,7 +14,7 @@ const Form = () => {
   
   const checkboxChecked = watch('privacy');
   
-  const onSubmit = async (data) => {
+  const onSubmit = useCallback(async (data) => {
     setIsSubmitting(true);
     
     // Format phone number for submission
@@ -32,12 +32,12 @@ const Form = () => {
       email: data.email.toLowerCase(),
       telefone: formattedPhone,
       desafio: data.challenge,
-      lgpd: checkboxChecked ? true : false, // Adicionando o valor do checkbox LGPD
+      lgpd: !!checkboxChecked,
       ...utmData
     };
     
     try {
-      // Log dos dados que serão enviados
+      // Log data being sent (for debugging purposes)
       console.log('Dados a serem enviados:', payload);
       
       // Send to webhook
@@ -68,16 +68,22 @@ const Form = () => {
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }, [checkboxChecked, navigate]);
   
   return (
-    <form id="waitlist-form" onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-lg p-8 shadow-lg">
+    <form id="waitlist-form" onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-lg p-8 shadow-lg transition-all duration-300 hover:shadow-xl">
       <div className="mb-6">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          Seu nome completo
+        </label>
         <input
+          id="name"
           type="text"
-          placeholder="Seu nome completo"
-          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
-            errors.name ? 'border-red-500 focus:ring-red-200' : 'border-gray-300 focus:ring-[#2ECC71]'
+          placeholder="Nome completo como deseja ser chamado"
+          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 ${
+            errors.name 
+              ? 'border-red-500 focus:ring-red-200 focus:border-red-500' 
+              : 'border-gray-300 focus:ring-[#2ECC71] focus:border-[#2ECC71] hover:border-gray-400'
           }`}
           {...register('name', { 
             required: 'Nome é obrigatório',
@@ -85,14 +91,21 @@ const Form = () => {
           })}
         />
         {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+        <p className="text-gray-500 text-xs mt-1">Como você gostaria de ser chamado? (apenas primeiro e último nome)</p>
       </div>
       
       <div className="mb-6">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          Seu melhor e-mail
+        </label>
         <input
+          id="email"
           type="email"
-          placeholder="Seu melhor e-mail"
-          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
-            errors.email ? 'border-red-500 focus:ring-red-200' : 'border-gray-300 focus:ring-[#2ECC71]'
+          placeholder="seu@email.com"
+          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 ${
+            errors.email 
+              ? 'border-red-500 focus:ring-red-200 focus:border-red-500' 
+              : 'border-gray-300 focus:ring-[#2ECC71] focus:border-[#2ECC71] hover:border-gray-400'
           }`}
           {...register('email', { 
             required: 'E-mail é obrigatório',
@@ -103,15 +116,22 @@ const Form = () => {
           })}
         />
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+        <p className="text-gray-500 text-xs mt-1">Não enviamos spam. Apenas conteúdo estratégico.</p>
       </div>
       
       <div className="mb-6">
+        <label htmlFor="whatsapp" className="block text-sm font-medium text-gray-700 mb-2">
+          Seu WhatsApp
+        </label>
         <input
+          id="whatsapp"
           type="tel"
           placeholder="(00) 00000-0000"
           maxLength="15"
-          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
-            errors.whatsapp ? 'border-red-500 focus:ring-red-200' : 'border-gray-300 focus:ring-[#2ECC71]'
+          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 ${
+            errors.whatsapp 
+              ? 'border-red-500 focus:ring-red-200 focus:border-red-500' 
+              : 'border-gray-300 focus:ring-[#2ECC71] focus:border-[#2ECC71] hover:border-gray-400'
           }`}
           {...register('whatsapp', { 
             required: 'WhatsApp é obrigatório',
@@ -126,14 +146,21 @@ const Form = () => {
           }}
         />
         {errors.whatsapp && <p className="text-red-500 text-sm mt-1">{errors.whatsapp.message}</p>}
+        <p className="text-gray-500 text-xs mt-1">Seu celular para receber conteúdo exclusivo</p>
       </div>
       
       <div className="mb-6">
+        <label htmlFor="challenge" className="block text-sm font-medium text-gray-700 mb-2">
+          Qual é seu maior desafio ao criar conteúdo para o Instagram?
+        </label>
         <textarea
-          placeholder="Qual é seu maior desafio ao criar conteúdo para o Instagram?"
+          id="challenge"
+          placeholder="Descreva seu maior desafio..."
           rows="4"
-          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 ${
-            errors.challenge ? 'border-red-500 focus:ring-red-200' : 'border-gray-300 focus:ring-[#2ECC71]'
+          className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200 resize-none ${
+            errors.challenge 
+              ? 'border-red-500 focus:ring-red-200 focus:border-red-500' 
+              : 'border-gray-300 focus:ring-[#2ECC71] focus:border-[#2ECC71] hover:border-gray-400'
           }`}
           {...register('challenge', { 
             required: 'Este campo é obrigatório',
@@ -144,21 +171,21 @@ const Form = () => {
       </div>
       
       <div className="mb-6">
-        <label className="flex items-start">
+        <label className="flex items-start cursor-pointer group">
           <input
             type="checkbox"
-            className="mt-1 mr-3"
+            className="mt-1 mr-3 h-5 w-5 text-[#2ECC71] rounded focus:ring-[#2ECC71] border-gray-300 transition-all duration-200 group-hover:border-[#2ECC71]"
             {...register('privacy', { 
               required: 'Você precisa aceitar a política de privacidade'
             })}
           />
-          <span className="text-gray-700 text-sm">
+          <span className="text-gray-700 text-sm transition-colors duration-200 group-hover:text-gray-900">
             Concordo em receber comunicações sobre o FlowContent e com a{' '}
             <a 
               href="https://alessandrobarros.com/politica-de-privacidade" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[#2ECC71] hover:underline"
+              className="text-[#2ECC71] hover:underline hover:text-[#27AE60] transition-colors duration-200"
             >
               Política de Privacidade
             </a>.
@@ -170,11 +197,11 @@ const Form = () => {
       <button
         type="submit"
         disabled={!isValid || !checkboxChecked || isSubmitting}
-        className={`w-full py-4 px-6 rounded-lg font-semibold text-lg text-white transition-colors duration-300 ${
+        className={`w-full py-4 px-6 rounded-lg font-semibold text-lg text-white transition-all duration-300 transform ${
           isValid && checkboxChecked && !isSubmitting
-            ? 'bg-[#2ECC71] hover:bg-[#27AE60] active:bg-[#219653] cursor-pointer'
-            : 'bg-[#58D68D] hover:bg-[#2ECC71] cursor-not-allowed'
-        }`}
+            ? 'bg-[#2ECC71] hover:bg-[#27AE60] hover:scale-[1.02] active:scale-[0.98] active:bg-[#219653] shadow-md hover:shadow-lg cursor-pointer'
+            : 'bg-[#58D68D] hover:bg-[#2ECC71] cursor-not-allowed opacity-75'
+        } ${isSubmitting ? 'animate-pulse' : ''}`}
       >
         {isSubmitting ? 'Enviando...' : 'Entrar na Lista de Espera VIP'}
       </button>
@@ -182,4 +209,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default memo(Form);

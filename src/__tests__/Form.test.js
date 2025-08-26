@@ -25,10 +25,10 @@ describe('Form Component', () => {
   test('deve renderizar todos os campos do formulário', () => {
     render(<Form />);
     
-    expect(screen.getByPlaceholderText('Seu nome completo')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('Seu melhor e-mail')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('Nome completo como deseja ser chamado')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('seu@email.com')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('(00) 00000-0000')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('Qual é seu maior desafio ao criar conteúdo para o Instagram?')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('Descreva seu maior desafio...')).toBeInTheDocument();
     expect(screen.getByText(/Concordo em receber comunicações sobre o FlowContent e com a/)).toBeInTheDocument();
   });
 

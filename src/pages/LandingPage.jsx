@@ -37,15 +37,19 @@ const LandingPage = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-12">
               <div className="mb-6">
-                <h1 className="text-2xl font-bold text-[#2ECC71] animate-pulse-glow">FlowContent</h1>
+                <h1 className="text-2xl font-bold text-[#2ECC71] animate-pulse-glow transition-all duration-300 hover:text-[#27AE60]">
+                  FlowContent
+                </h1>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 min-h-[120px] flex items-center justify-center">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 min-h-[120px] flex items-center justify-center transition-all duration-300">
                 {displayText}
                 {showCursor && <span className="ml-1 animate-pulse">|</span>}
               </h1>
-              <p className="text-xl text-gray-700 mb-10">
+              <p className="text-xl text-gray-700 mb-10 leading-relaxed">
+                <span className="font-semibold text-gray-900">Sem tempo para criar 3 posts por semana?</span>{' '}
                 FlowContent é o combo de agentes de IA que cria conteúdo estratégico pra nutricionistas ocupadas. 
-                Entre na lista VIP e seja um dos primeiros a transformar seu Instagram!
+                <br />
+                <span className="font-semibold text-[#2ECC71]">Entre na lista VIP</span> e seja um dos primeiros a transformar seu Instagram!
               </p>
             </div>
             

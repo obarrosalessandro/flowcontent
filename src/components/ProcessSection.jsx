@@ -43,10 +43,10 @@ const ProcessSection = () => {
           {steps.slice(0, 3).map((step, index) => (
             <div 
               key={index} 
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100 hover:border-[#2ECC71]"
             >
               <div className="flex">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#2ECC71] flex items-center justify-center text-white font-bold text-xl mr-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#2ECC71] flex items-center justify-center text-white font-bold text-xl mr-4 transition-all duration-300 hover:bg-[#27AE60]">
                   {step.number}
                 </div>
                 <div>
@@ -62,10 +62,10 @@ const ProcessSection = () => {
           {steps.slice(3).map((step, index) => (
             <div 
               key={index + 3} 
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-gray-100 hover:border-[#2ECC71]"
             >
               <div className="flex">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#2ECC71] flex items-center justify-center text-white font-bold text-xl mr-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#2ECC71] flex items-center justify-center text-white font-bold text-xl mr-4 transition-all duration-300 hover:bg-[#27AE60]">
                   {step.number}
                 </div>
                 <div>
