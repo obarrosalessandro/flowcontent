@@ -12,6 +12,6 @@ describe('Header Component', () => {
   test('has correct styling classes', () => {
     render(<Header />);
     const headerElement = screen.getByRole('banner');
-    expect(headerElement).toHaveClass('pt-6', 'pb-2', 'flex', 'justify-center');
+    expect(headerElement).toHaveClass('pt-4', 'pb-0', 'flex', 'justify-center');
   });
 });
