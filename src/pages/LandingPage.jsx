@@ -36,11 +36,6 @@ const LandingPage = () => {
         <section className="py-16 bg-gradient-to-r from-blue-50 to-green-50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center mb-12">
-              <div className="mb-6">
-                <h1 className="text-2xl font-bold text-[#2ECC71] animate-pulse-glow transition-all duration-300 hover:text-[#27AE60]">
-                  FlowContent
-                </h1>
-              </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800 min-h-[120px] flex items-center justify-center transition-all duration-300">
                 {displayText}
                 {showCursor && <span className="ml-1 animate-pulse">|</span>}
