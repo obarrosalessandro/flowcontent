@@ -10,8 +10,9 @@ const Footer = () => {
         <p className="text-gray-600 text-sm mb-2">
           FlowContent © 2025. Todos os direitos reservados.
         </p>
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center items-center space-x-4">
           <a href="#" className="text-[#2ECC71] hover:underline text-sm">Sobre</a>
+          <span className="text-[#2ECC71]">|</span>
           <a 
             href="https://alessandrobarros.com/politica-de-privacidade" 
             target="_blank" 
