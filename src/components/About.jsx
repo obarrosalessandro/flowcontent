@@ -36,7 +36,7 @@ const About = () => {
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-2/5 flex justify-center">
               <img 
-                src="/Alessandro-Barros.webp" 
+                src="https://alessandrobarros.com/wp-content/uploads/2024/12/Alessandro-Barros.png" 
                 alt="Alessandro Barros" 
                 className="rounded-xl shadow-lg w-full max-w-xs md:max-w-sm transition-all duration-300 hover:shadow-xl"
                 style={{ maxWidth: '380px', height: 'auto' }}

@@ -11,7 +11,7 @@ const ThankYouPage = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center bg-white rounded-lg p-8 shadow-lg transition-all duration-500 animate-fade-in">
             <div className="mb-6">
-              <h1 className="text-2xl font-bold text-[#2ECC71] animate-pulse-glow">FlowContent</h1>
+              <h1 className="text-2xl font-bold text-[#2ECC71]">FlowContent</h1>
             </div>
             
             <div className="mb-6">
@@ -82,18 +82,18 @@ const ThankYouPage = () => {
       <footer className="bg-gray-100 py-6">
         <div className="container mx-auto px-4 text-center">
           <div className="mb-4">
-            <h2 className="text-2xl font-bold text-[#2ECC71] footer-logo transition-all duration-300 hover:text-[#27AE60]">FlowContent</h2>
+            <h2 className="text-2xl font-bold text-[#2ECC71]">FlowContent</h2>
           </div>
           <p className="text-gray-600 text-sm mb-2">
             FlowContent © 2025. Todos os direitos reservados.
           </p>
           <div className="flex justify-center space-x-4">
-            <a href="#" className="text-[#2ECC71] hover:underline text-sm transition-colors duration-200 hover:text-[#27AE60]">Sobre</a>
+            <a href="#" className="text-[#2ECC71] hover:underline text-sm">Sobre</a>
             <a 
               href="https://alessandrobarros.com/politica-de-privacidade" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[#2ECC71] hover:underline text-sm transition-colors duration-200 hover:text-[#27AE60]"
+              className="text-[#2ECC71] hover:underline text-sm"
             >
               Política de Privacidade
             </a>

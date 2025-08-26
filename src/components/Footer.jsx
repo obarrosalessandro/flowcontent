@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="bg-gray-100 py-6">
       <div className="container mx-auto px-4 text-center">
         <div className="mb-4">
-          <h2 className="text-2xl font-bold text-[#2ECC71] footer-logo">FlowContent</h2>
+          <h2 className="text-2xl font-bold text-[#2ECC71]">FlowContent</h2>
         </div>
         <p className="text-gray-600 text-sm mb-2">
           FlowContent © 2025. Todos os direitos reservados.
